@@ -1,0 +1,144 @@
+/* ================================
+   ADMIN COMMUNITY - Lista de categorias
+   ================================ */
+
+.admin-community-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.admin-community-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 14px;
+  padding: 24px 28px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.admin-community-card:hover {
+  transform: translateX(6px);
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.25);
+  border-color: #5043e8;
+}
+
+.admin-community-card.general {
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.15) 0%, rgba(124, 58, 237, 0.1) 100%);
+  border-color: rgba(79, 70, 229, 0.3);
+}
+
+.admin-community-card.general .admin-community-icon {
+  background: #5043e8;
+}
+
+.admin-community-icon {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #5043e8;
+  border-radius: 14px;
+  flex-shrink: 0;
+  color: white;
+  font-size: 1.8rem;
+}
+
+.admin-community-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.admin-community-info h3 {
+  font-size: 1.25rem;
+  color: #ffffff;
+  margin: 0 0 6px;
+}
+
+.admin-community-info p {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.admin-community-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-clear-chat {
+  width: 44px;
+  height: 44px;
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 10px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-clear-chat:hover {
+  background: #ef4444;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+}
+
+.btn-enter-chat {
+  padding: 12px 22px;
+  background: #5043e8;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-enter-chat:hover {
+  background: #6366f1;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+  .admin-community-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .admin-community-icon {
+    width: 56px;
+    height: 56px;
+    font-size: 1.5rem;
+  }
+
+  .admin-community-actions {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .btn-enter-chat {
+    flex: 1;
+  }
+}
+
