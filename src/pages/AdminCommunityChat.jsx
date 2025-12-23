@@ -161,7 +161,10 @@ export default function AdminCommunityChat() {
       <div className="admin-layout">
         <AdminSidebar />
         <div className="admin-content">
-          <div className="loading">Carregando chat...</div>
+          <div className="loading">
+            <i className="bi bi-arrow-repeat loading-icon"></i>
+            <span>Carregando chat...</span>
+          </div>
         </div>
       </div>
     );

@@ -21,3 +21,29 @@ body {
   width: 100%;
   min-height: 100vh;
 }
+
+/* Loading global styles */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 60vh;
+  font-size: 1.2rem;
+  color: #aaa;
+}
+
+.loading-icon {
+  font-size: 1.5rem;
+  animation: spin 1s linear infinite;
+  color: #5043e8;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

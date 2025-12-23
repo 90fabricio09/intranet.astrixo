@@ -107,6 +107,47 @@ body {
   background: rgba(255, 255, 255, 0.08);
 }
 
+.password-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-input-wrapper input {
+  padding-right: 45px;
+  width: 100%;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #aaa;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+  z-index: 1;
+  height: auto;
+}
+
+.password-toggle:hover {
+  color: #ffffff;
+}
+
+.password-toggle:focus {
+  outline: none;
+}
+
+.password-toggle i {
+  font-size: 1.2rem;
+}
+
 .login-button {
   padding: 14px;
   background: #5043e8;

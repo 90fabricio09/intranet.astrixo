@@ -73,7 +73,10 @@ export default function AdminCommunity() {
       <div className="admin-layout">
         <AdminSidebar />
         <div className="admin-content">
-          <div className="loading">Carregando...</div>
+          <div className="loading">
+            <i className="bi bi-arrow-repeat loading-icon"></i>
+            <span>Carregando...</span>
+          </div>
         </div>
       </div>
     );

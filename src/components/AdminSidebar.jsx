@@ -47,8 +47,8 @@ export default function AdminSidebar() {
 
   return (
     <>
-      <button className="sidebar-toggle" onClick={() => setIsOpen(!isOpen)}>
-        ☰
+      <button className={`sidebar-toggle ${isOpen ? 'open' : ''}`} onClick={() => setIsOpen(!isOpen)}>
+        <i className={isOpen ? 'bi bi-x-lg' : 'bi bi-list'}></i>
       </button>
       
       <aside className={`admin-sidebar ${isOpen ? 'open' : ''}`}>

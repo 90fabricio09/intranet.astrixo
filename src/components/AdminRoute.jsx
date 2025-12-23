@@ -11,11 +11,17 @@ export default function AdminRoute({ children }) {
         display: 'flex', 
         alignItems: 'center', 
         justifyContent: 'center', 
+        gap: '12px',
         minHeight: '100vh',
         fontSize: '1.2rem',
         color: '#666'
       }}>
-        Carregando...
+        <i className="bi bi-arrow-repeat" style={{ 
+          fontSize: '1.5rem', 
+          animation: 'spin 1s linear infinite',
+          color: '#5043e8'
+        }}></i>
+        <span>Carregando...</span>
       </div>
     );
   }

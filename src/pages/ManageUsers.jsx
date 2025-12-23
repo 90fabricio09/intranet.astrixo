@@ -21,6 +21,9 @@ export default function ManageUsers() {
     password: ''
   });
   const [showPasswordModal, setShowPasswordModal] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [showAdminPassword, setShowAdminPassword] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -180,8 +183,9 @@ export default function ManageUsers() {
 
                 <div className="form-group">
                   <label htmlFor="password">Senha do Aluno</label>
+                  <div className="password-input-wrapper">
                   <input
-                    type="password"
+                      type={showPassword ? "text" : "password"}
                     id="password"
                     value={formData.password}
                     onChange={(e) => setFormData({ ...formData, password: e.target.value })}
@@ -189,12 +193,22 @@ export default function ManageUsers() {
                     placeholder="Mínimo 6 caracteres"
                     minLength="6"
                   />
+                    <button
+                      type="button"
+                      className="password-toggle"
+                      onClick={() => setShowPassword(!showPassword)}
+                      aria-label={showPassword ? "Ocultar senha" : "Mostrar senha"}
+                    >
+                      <i className={showPassword ? "bi bi-eye-slash-fill" : "bi bi-eye-fill"}></i>
+                    </button>
+                  </div>
                 </div>
 
                 <div className="form-group">
                   <label htmlFor="confirmPassword">Confirmar Senha</label>
+                  <div className="password-input-wrapper">
                   <input
-                    type="password"
+                      type={showConfirmPassword ? "text" : "password"}
                     id="confirmPassword"
                     value={formData.confirmPassword}
                     onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
@@ -202,6 +216,15 @@ export default function ManageUsers() {
                     placeholder="Digite a senha novamente"
                     minLength="6"
                   />
+                    <button
+                      type="button"
+                      className="password-toggle"
+                      onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                      aria-label={showConfirmPassword ? "Ocultar senha" : "Mostrar senha"}
+                    >
+                      <i className={showConfirmPassword ? "bi bi-eye-slash-fill" : "bi bi-eye-fill"}></i>
+                    </button>
+                  </div>
                 </div>
 
                 <div className="warning-box">
@@ -258,8 +281,9 @@ export default function ManageUsers() {
 
                 <div className="form-group">
                   <label htmlFor="adminPassword">Sua Senha de Admin</label>
+                  <div className="password-input-wrapper">
                   <input
-                    type="password"
+                      type={showAdminPassword ? "text" : "password"}
                     id="adminPassword"
                     value={adminCredentials.password}
                     onChange={(e) => setAdminCredentials({ ...adminCredentials, password: e.target.value })}
@@ -267,6 +291,15 @@ export default function ManageUsers() {
                     placeholder="Digite sua senha de admin"
                     autoFocus
                   />
+                    <button
+                      type="button"
+                      className="password-toggle"
+                      onClick={() => setShowAdminPassword(!showAdminPassword)}
+                      aria-label={showAdminPassword ? "Ocultar senha" : "Mostrar senha"}
+                    >
+                      <i className={showAdminPassword ? "bi bi-eye-slash-fill" : "bi bi-eye-fill"}></i>
+                    </button>
+                  </div>
                 </div>
 
                 <div className="info-message">

@@ -13,6 +13,7 @@ export default function Login() {
   const [mode, setMode] = useState('login'); // 'login' | 'reset'
   const [loading, setLoading] = useState(false);
   const [resetLoading, setResetLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const { login, logout } = useAuth();
   const navigate = useNavigate();
 
@@ -89,14 +90,24 @@ export default function Login() {
             
             <div className="form-group">
               <label htmlFor="password">Senha</label>
+              <div className="password-input-wrapper">
               <input
-                type="password"
+                  type={showPassword ? "text" : "password"}
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
                 placeholder="••••••••"
               />
+                <button
+                  type="button"
+                  className="password-toggle"
+                  onClick={() => setShowPassword(!showPassword)}
+                  aria-label={showPassword ? "Ocultar senha" : "Mostrar senha"}
+                >
+                  <i className={showPassword ? "bi bi-eye-slash-fill" : "bi bi-eye-fill"}></i>
+                </button>
+              </div>
             </div>
             
             <button type="submit" disabled={loading} className="login-button">

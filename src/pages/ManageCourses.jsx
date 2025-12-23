@@ -228,7 +228,10 @@ export default function ManageCourses() {
       <div className="admin-layout">
         <AdminSidebar />
         <div className="admin-content">
-          <div className="loading">Carregando...</div>
+          <div className="loading">
+            <i className="bi bi-arrow-repeat loading-icon"></i>
+            <span>Carregando...</span>
+          </div>
         </div>
       </div>
     );
@@ -414,6 +417,7 @@ export default function ManageCourses() {
                         <div className="lesson-info">
                           <h4>{lesson.title}</h4>
                           <p>{lesson.description}</p>
+                          <div className="lesson-video-link-wrapper">
                           <a 
                             href={lesson.videoUrl} 
                             target="_blank" 
@@ -423,6 +427,7 @@ export default function ManageCourses() {
                             <i className="bi bi-play-circle"></i>
                             {lesson.videoUrl}
                           </a>
+                          </div>
                         </div>
                         <div className="lesson-actions">
                           <button 
